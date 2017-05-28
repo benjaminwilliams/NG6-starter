@@ -31,6 +31,16 @@ module.exports = function (config) {
       module: {
         loaders: [
           { test: /\.js/, exclude: [/app\/lib/, /node_modules/], loader: 'babel' },
+          {
+            test: /\.jpg/,
+            exclude: /(node_modules|bower_components)/,
+            loader: "url-loader?limit=10000&mimetype=image/jpg&name=images/[name].[ext]"
+          },
+          {
+            test: /\.png/,
+            exclude: /(node_modules|bower_components)/,
+            loader: "url-loader?limit=10000&mimetype=image/png&name=images/[name].[ext]"
+          },
           { test: /\.html$/, loader: 'raw' },
           { test: /\.(scss|sass)$/, loader: 'style!css!sass' },
           { test: /\.css$/, loader: 'style!css' }

@@ -1,4 +1,5 @@
 
+import agents from '../../services/agents.service';
 
 class AgentsController {
 
@@ -13,7 +14,6 @@ class AgentsController {
 
   searchAgents(){
     this.agents.getAgents(this.searchtext).async().then((result)=>{
-      console.table(result);
       if(result){
         this.searchResults = result.Results;
       }
