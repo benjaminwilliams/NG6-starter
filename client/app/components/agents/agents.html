@@ -6,9 +6,16 @@
       <input type="submit" value="Search" class="button search-header__form-button">
   </form>
 </section>
-<section>
-  This is the agents page.
-    {{$ctrl.searchResults}}
+<section class="agent__wrapper">
+    <div ng-if="!$ctrl.searchResults.length" class="search__msg--no-results">Find agents by entering their name above</div>
+    <ul>
+       <li ng-repeat="result in $ctrl.searchResults" class="agent__result">
+           <img class="agent__image" src="{{result.ImageUrl}}">
+           <h2>{{result.Name}}</h2>
+           <h3>{{result.SecondaryName}}</h3>
+       </li>
+    </ul>
+    <div class="search__error" ng-if="$ctrl.errorMsg">{{$crtl.errorMsg}}</div>
 </section>
 
 

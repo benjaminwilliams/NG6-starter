@@ -21,3 +21,11 @@ $shadow-box: 1px 1px 1px 0 rgba(0,0,0, 0.2);
 .button {
   @include button;
 }
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

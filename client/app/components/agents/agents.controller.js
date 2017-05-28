@@ -8,15 +8,20 @@ class AgentsController {
     this.name = 'agents';
     this.searchtext = '';
     this.searchResults = {};
+    this.errorMsg = "";
   }
 
   searchAgents(){
     this.agents.getAgents(this.searchtext).async().then((result)=>{
       console.table(result);
-      this.searchResults = result.Results;
+      if(result){
+        this.searchResults = result.Results;
+      }
+      else {
+        this.errorMsg = "error retrieving search results. Please try again";
+      }
     });
 
-    console.log(this.searchResults);
 
   }
 

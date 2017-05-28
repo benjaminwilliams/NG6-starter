@@ -6,11 +6,16 @@
   background-size: cover;
   width: 100%;
   padding-top: 80px;
+  text-align: center;
 }
 
 .search-header__form {
   max-width: 700px;
   margin: 0 auto;
+  text-align: center;
+  @media(max-width: $bp-mobile){
+    width: 90%;
+  }
 }
 
 .search-header__form-input {
@@ -18,7 +23,7 @@
   padding: 10px;
   width: 500px;
   @media(max-width: $bp-mobile){
-    width: 100%;
+    width: 90%;
   }
 }
 
@@ -28,10 +33,53 @@
   color: #777;
   padding: 12px 20px;
   @media(max-width: $bp-mobile){
-    margin: 0 auto;
+    margin: 10px auto 0 auto;
+
   }
 }
 
+.agent__wrapper {
+  max-width: 1200px;
+  margin: 40px auto 60px auto;
+  box-sizing: border-box;
+  padding: 0;
+  ul {
+    margin: 0;
+    padding: 0;
+    @include clearfix;
+  }
+  li {
+    list-style: none;
+  }
+}
 
+.agent__result {
+  float: left;
+  width: 30%;
+  height: 120px;
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0 10px 20px 10px;
+  @media(max-width: $bp-tablet) {
+    width: 45%;
+  }
+  @media(max-width: $bp-mobile){
+    width: 100%;
+    margin: 0;
+  }
+}
 
+.agent__image {
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 20px;
+}
 
+.search__msg--no-results {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2em;
+
+}
