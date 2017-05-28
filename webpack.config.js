@@ -9,6 +9,16 @@ module.exports = {
     loaders: [
        { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate!babel' },
        { test: /\.html$/, loader: 'raw' },
+       {
+         test: /\.jpg/,
+         exclude: /(node_modules|bower_components)/,
+         loader: "url-loader?limit=10000&mimetype=image/jpg&name=images/[name].[ext]"
+       },
+       {
+         test: /\.png/,
+         exclude: /(node_modules|bower_components)/,
+         loader: "url-loader?limit=10000&mimetype=image/png&name=images/[name].[ext]"
+       },
        { test: /\.(scss|sass)$/, loader: 'style!css!sass' },
        { test: /\.css$/, loader: 'style!css' }
     ]

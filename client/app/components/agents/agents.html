@@ -1,5 +1,14 @@
 <navbar></navbar>
-<h1>{{ $ctrl.name }}</h1>
+<section class="search-header">
+  <form ng-submit="$ctrl.searchAgents()" class="search-header__form">
+      <label for="agents" class="hidden">Search Agents</label>
+      <input id="agents" type="text" class="search-header__form-input" ng-model="$ctrl.searchtext">
+      <input type="submit" value="Search" class="button search-header__form-button">
+  </form>
+</section>
 <section>
   This is the agents page.
 </section>
+
+
+
